@@ -160,6 +160,10 @@ module ActiveCMIS
         http = http_class.new(uri.host, uri.port)
         # Force to use SSL
         http.use_ssl = (uri.scheme == 'https')
+		# Not verify SSL
+        if options[:ssl_verify] == false
+          http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        end
         # Set the timeout
         if options[:timeout]
           http.open_timeout = options[:timeout]

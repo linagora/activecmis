@@ -6,12 +6,12 @@
 
 Gem::Specification.new do |s|
   s.name = "active_cmis"
-  s.version = "0.3.6"
+  s.version = "0.3.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
-  s.authors = ["Joeri Samson"]
-  s.date = "2015-04-09"
+  s.authors = ["Joeri Samson","Linagora"]
+  s.date = "2021-01-21"
   s.description = "A CMIS library implementing both reading and updating capabilities through the AtomPub/REST binding to CMIS."
   s.email = "joeri@xaop.com"
   s.extra_rdoc_files = [
@@ -53,7 +53,7 @@ Gem::Specification.new do |s|
     "lib/active_cmis/type.rb",
     "lib/active_cmis/version.rb"
   ]
-  s.homepage = "http://xaop.com/labs/activecmis/"
+  s.homepage = "https://github.com/linagora/activecmis"
   s.required_ruby_version = Gem::Requirement.new(">= 1.8.6")
   s.rubygems_version = "2.4.5"
   s.summary = "A library to interact with CMIS repositories through the AtomPub/REST binding"
