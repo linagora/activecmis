@@ -44,12 +44,12 @@ module ActiveCMIS
       # @return [String] returns the body of the request, unless an error occurs
       def get(url)
         uri = normalize_url(url)
-	logger.debug "Method get only #{uri}"
-	# Ensure the parsed URL is an HTTP one
+	    logger.debug "Method get only #{uri}"
+	    # Ensure the parsed URL is an HTTP one
         raise HTTPError::ClientError.new("Invalid URL #{url}") unless uri.is_a?(URI::HTTP)
-	req = Net::HTTP::Get.new(uri.request_uri)
+	    req = Net::HTTP::Get.new(uri.request_uri)
         req['Cookie'] = options[:cookies]
-	handle_request(uri, req)
+	    handle_request(uri, req)
       end
 
       # Does not throw errors, returns the full response (includes status code and headers)
@@ -158,6 +158,9 @@ module ActiveCMIS
 
       def authenticate_request(uri, req)
         http = http_class.new(uri.host, uri.port)
+		# Set cookie value
+		req['Cookie'] = options[:cookies]
+		logger.debug "Method authenticate_request url #{uri}"
         # Force to use SSL
         http.use_ssl = (uri.scheme == 'https')
         # Set cookie value
@@ -194,7 +197,6 @@ module ActiveCMIS
       def handle_request(uri, req, retry_count = 0)
         logger.debug "Method handle_request #{req.method} #{uri}"
         http = authenticate_request(uri, req)
-
         status, body, headers = nil
         http.request(req) { |resp|
           status = resp.code.to_i
@@ -206,7 +208,7 @@ module ActiveCMIS
 
         if 200 <= status && status < 300
            logger.debug "Method handler request status #{status} and body #{body}"
-	   logger.debug "End method handle_request #{status}"
+	      logger.debug "End method handle_request #{status}"
            return body
         elsif 300 <= status && status < 400
           # follow the redirected a limited number of times

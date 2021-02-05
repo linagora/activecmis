@@ -41,7 +41,7 @@ module ActiveCMIS
         auth_type = config["server_auth"] || :basic
         authentication_info = [auth_type, user_name, password]
       end
-      server = Server.new(config["server_url"], logger, authentication_info, { :timeout => config["timeout"], :cookies => config['cookies'], :ssl_verify => config["ssl_verify"] })
+      server = Server.new(config["server_url"], logger, authentication_info, { :timeout => config["timeout"],  :cookies => config["cookies"],   :ssl_verify => config["ssl_verify"] })
       if user_name = config["repository_login"] and password = config["repository_password"]
         auth_type = config["repository_auth"] || :basic
         authentication_info = [auth_type, user_name, password]
