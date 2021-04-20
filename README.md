@@ -11,6 +11,11 @@ ActiveCMIS is Ruby library aimed at easing the interaction with various CMIS pro
 - Write support and the ability to create new objects.
 - Support for paging
 
+## Changes since 0.3.8 ##
+- Added the ability to set cookies
+- Added the ability to display link folders
+- Added the ability to save data outside the library to another log file
+
 ## Changes since 0.3.5 ##
 - implement the possibility to set the timeout to be used by the Net::HTTP object (thanks to zedtux)
 
