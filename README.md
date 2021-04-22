@@ -1,7 +1,7 @@
-# ActiveCMIS Release 0.3.4 #
+# ActiveCMIS Release 0.3.9 #
 **Git**:       <http://github.com/xaop/activecmis>  
 **Documentation**: <http://rdoc.info/github/xaop/activecmis/master/frames>  
-**Author**:    XAOP bvba  
+**Author**:    XAOP bvba, Linagora  
 **Copyright**: 2011  
 **License**:   MIT License  
 ## Synopsis ##
@@ -11,9 +11,11 @@ ActiveCMIS is Ruby library aimed at easing the interaction with various CMIS pro
 - Write support and the ability to create new objects.
 - Support for paging
 
+## Changes since 0.3.9 ##
+- Added the ability to retrieve link folders
+
 ## Changes since 0.3.8 ##
 - Added the ability to set cookies
-- Added the ability to display link folders
 - Added the ability to save data outside the library to another log file
 
 ## Changes since 0.3.5 ##
