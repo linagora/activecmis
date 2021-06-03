@@ -45,7 +45,7 @@ The way authentication works has changed. If you previously used ActiveCMIS.conn
 ## Installation ##
 If you haven't installed Nokogiri yet it will be installed automatically, you will need a C compiler and the development files for libxml2.
 
-    > gem install active_cmis
+    > gem install active_cmis2
 
 ActiveCMIS also depends on ntlm-http for ntlm authentication, unfortunately ntlm-http is broken on ruby 1.9.x
 This isn't a problem as long as you don't actually try to connect with NTLM authentication.
